@@ -1,0 +1,11 @@
+.chatbox {
+  background-color: theme("colors.blue.500");
+}
+
+.btn {
+  @apply font-bold;
+  @apply py-2;
+  @apply px-4;
+  @apply rounded;
+  @apply bg-red-500;
+}

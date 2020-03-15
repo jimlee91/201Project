@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     # Third party App
     'debug_toolbar',
     # Local App
+    'pages',
 
 ]
 

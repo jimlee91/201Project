@@ -119,4 +119,9 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+node_modules/
+.idea/
+dist/
+package-lock.json
+
 # End of https://www.gitignore.io/api/django
