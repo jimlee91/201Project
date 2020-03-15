@@ -90,6 +90,12 @@ const minImg = () => {
     .pipe(gulp.dest("app/static/images"));
 };
 
+const plugin = () => {
+  return gulp
+    .src(["dev/assets/plugins/**/*"], { since: gulp.lastRun(plugin) })
+    .pipe(gulp.dest("app/static/plugins"));
+};
+
 const watchTask = () => {
   gulp.watch("dev/**/*.scss", scss).on("change", browserSync.reload);
   gulp.watch("dev/**/*.js", js).on("change", browserSync.reload);
@@ -104,8 +110,8 @@ const clean = () => {
 
 exports.default = gulp.series(
   clean,
-  gulp.parallel(scss, js, minImg),
+  gulp.parallel(scss, js, minImg, plugin),
   gulp.parallel([runserver, server, watchTask])
 );
 
-exports.build = gulp.series(clean, scss, js, minImg);
+exports.build = gulp.series(clean, scss, js, minImg, plugin);
